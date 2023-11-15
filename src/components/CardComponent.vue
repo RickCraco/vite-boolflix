@@ -1,12 +1,12 @@
 <template>
     <div class="col-2">
-        <img :src="img" :alt="title">
-        <div>
-            <p>{{ title }}</p>
-            <p>{{ originalTitle }}</p>
-            <p>{{ lingua }}</p>
-            <p>{{ voto }}</p> 
-        </div>
+        <img :src="img" :alt="title" class="w-100">
+        <ul>
+            <li>{{ title }}</li>
+            <li>{{ originalTitle }}</li>
+            <li>{{ lingua }}</li>
+            <li>{{ voto }}</li> 
+        </ul>
     </div>
 </template>
 
@@ -28,4 +28,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    ul{
+        list-style: none;
+    }
+</style>
