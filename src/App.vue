@@ -1,9 +1,9 @@
 <template>
   <HeaderComponent />
-  <div class="container">
+  <div class="container py-3">
     <div class="row">
       <CardComponent v-for="movie in store.movieList" :title="movie.title" :originalTitle="movie.original_title"
-        :lingua="movie.original_language" :voto="movie.vote_average" :img="movie.poster_path" />
+        :lingua="movie.original_language" :voto="movie.vote_average" :img="store.imgPath + movie.poster_path" />
     </div>
   </div>
 </template>
