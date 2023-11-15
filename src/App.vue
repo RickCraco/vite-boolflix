@@ -1,16 +1,19 @@
 <template>
   <HeaderComponent/>
+  <CardComponent/>
 </template>
 
 <script>
   import axios from 'axios';
   import { store } from './store';
   import HeaderComponent from './components/HeaderComponent.vue';
+  import CardComponent from './components/CardComponent.vue';
 
   export default {
     name: 'App',
     components: {
     HeaderComponent,
+    CardComponent
 },
     data(){
       return{
