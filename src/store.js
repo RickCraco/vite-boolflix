@@ -12,5 +12,11 @@ export const store = reactive({
     },
     movieList: [],
     seriesList: [],
-    imgPath: 'https://image.tmdb.org/t/p/w342/'
+    imgPath: 'https://image.tmdb.org/t/p/w342/',
+    languages: {
+        en: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1ec-1f1e7.svg',
+        it: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1ee-1f1f9.svg',
+        fr: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1eb-1f1f7.svg',
+        de: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1e9-1f1ea.svg'
+    }
 })
