@@ -30,6 +30,9 @@
           console.log(store.seriesList);
         })
       }
+    },
+    created(){
+      this.getMovieList()
     }
   }
 </script>
