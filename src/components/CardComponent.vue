@@ -6,7 +6,7 @@
             <li>{{ originalTitle }}</li>
             <li v-if="(lingua in store.languages)"><img :src="checkFlag()" :alt="lingua" id="flag"></li>
             <li v-else>{{ lingua }}</li>
-            <li><img :src="store.myStar" :alt="voto" id="star" v-for="n in voto"></li> 
+            <li><img :src="store.myStar" :alt="voto" id="star" v-for="n in voto"></li>
         </ul>
     </div>
 </template>
