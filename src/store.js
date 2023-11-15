@@ -18,5 +18,6 @@ export const store = reactive({
         it: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1ee-1f1f9.svg',
         fr: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1eb-1f1f7.svg',
         de: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1e9-1f1ea.svg'
-    }
+    },
+    myStar: 'https://affaso.com/wp-content/uploads/2020/06/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq.png'
 })
