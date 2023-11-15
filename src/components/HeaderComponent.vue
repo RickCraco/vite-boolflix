@@ -5,7 +5,7 @@
                 <h1>BOOLFLIX</h1>
             </div>
             <div>
-                <input type="text">
+                <input type="text" @keyup.enter="searchFilms" v-model="movieString">
                 <button>Cerca</button>
             </div>
         </div>
@@ -13,12 +13,27 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { store } from '../store';
 export default {
     name: 'HeaderComponent',
     data() {
         return {
-            store
+            store,
+            movieString:''
+        }
+    },
+    methods:{
+        searchFilms(){
+            if(this.movieString === ''){
+                store.params.query = 'a';
+            }else{
+                store.params.query = this.movieString;
+            }
+            const url = store.apiUrl + store.endpoint.movie;
+            axios.get(url, {params: store.params}).then((response) =>{
+                store.movieList = response.data.results;
+            })
         }
     }
 }
