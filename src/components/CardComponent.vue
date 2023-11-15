@@ -2,7 +2,7 @@
     <div class="col-2">
         <img :src="img" :alt="title">
         <div>
-            <h3>{{ title }}</h3>
+            <p>{{ title }}</p>
             <p>{{ originalTitle }}</p>
             <p>{{ lingua }}</p>
             <p>{{ voto }}</p>
