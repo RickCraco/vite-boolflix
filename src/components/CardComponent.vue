@@ -6,7 +6,7 @@
             <li>{{ originalTitle }}</li>
             <li v-if="(lingua in store.languages)"><img :src="checkFlag()" :alt="lingua" id="flag"></li>
             <li v-else>{{ lingua }}</li>
-            <li>{{ voto }}</li> 
+            <li><img :src="store.myStar" :alt="voto" id="star" v-for="n in voto"></li> 
         </ul>
     </div>
 </template>
@@ -47,5 +47,8 @@ export default {
 <style lang="scss" scoped>
     #flag{
         width: 2em;
+    }
+    #star{
+        width: 1em;
     }
 </style>
