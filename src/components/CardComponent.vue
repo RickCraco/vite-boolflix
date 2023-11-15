@@ -5,7 +5,7 @@
             <p>{{ title }}</p>
             <p>{{ originalTitle }}</p>
             <p>{{ lingua }}</p>
-            <p>{{ voto }}</p>
+            <p>{{ voto }}</p> 
         </div>
     </div>
 </template>
