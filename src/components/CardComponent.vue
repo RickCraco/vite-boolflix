@@ -14,6 +14,7 @@
                     <li v-if="voto > 0">
                         <img :src="store.myStar" :alt="voto" id="star" v-for="n in voto">
                     </li>
+                    <li v-else><span>Voto : {{ voto }}</span></li>
                 </ul>
             </div>
 
