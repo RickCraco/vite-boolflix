@@ -11,5 +11,6 @@ export const store = reactive({
         query: 'a'
     },
     movieList: [],
-    seriesList: []
+    seriesList: [],
+    imgPath: 'https://image.tmdb.org/t/p/w342/'
 })
