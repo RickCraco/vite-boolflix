@@ -6,7 +6,7 @@
             </div>
             <div>
                 <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString">
-                <button>Cerca</button>
+                <button @click="searchFilms(), searchTV()">Cerca</button>
             </div>
         </div>
     </header>
