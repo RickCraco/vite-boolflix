@@ -1,4 +1,5 @@
 <template>
+  <HeaderComponent/>
 </template>
 
 <script>
@@ -9,8 +10,9 @@
   export default {
     name: 'App',
     components: {
-      HeaderComponent,
-    },
+    HeaderComponent,
+    HeaderComponent
+},
     data(){
       return{
         store
