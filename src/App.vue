@@ -1,6 +1,11 @@
 <template>
   <HeaderComponent/>
-  <CardComponent/>
+  <CardComponent v-for="movie in store.movieList" 
+  :title="movie.title" 
+  :originalTitle="movie.original_title" 
+  :lingua="movie.original_language" 
+  :voto="movie.vote_average" 
+  :img="movie.poster_path"/>
 </template>
 
 <script>
