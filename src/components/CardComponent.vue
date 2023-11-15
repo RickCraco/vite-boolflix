@@ -10,6 +10,7 @@
                     <li><span class="fw-bold">Titolo originale: {{ originalTitle }}</span></li>
                     <li v-if="(lingua in store.languages)"><img :src="checkFlag()" :alt="lingua" id="flag"></li>
                     <li v-else><span class="fw-bold">Lingua:{{ lingua }}</span></li>
+                    <li><span class="fw-bold">{{ trama }}</span></li>
                     <li v-if="voto > 0">
                         <img :src="store.myStar" :alt="voto" id="star" v-for="n in voto">
                     </li>
@@ -31,6 +32,7 @@ export default {
         lingua: String,
         voto: Number,
         img: String,
+        trama: String
     },
     data() {
         return {
@@ -115,5 +117,6 @@ span{
     background-color: black;
     color: white;
     transform: rotateY(180deg);
+    overflow-y: auto;
 }
 </style>
