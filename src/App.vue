@@ -11,7 +11,6 @@
     name: 'App',
     components: {
     HeaderComponent,
-    HeaderComponent
 },
     data(){
       return{
