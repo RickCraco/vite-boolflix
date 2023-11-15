@@ -18,21 +18,20 @@
     methods: {
       getMovieList(){
         const url = store.apiUrl + store.endpoint.movie;
-        axios.get(url, store.params).then((response) =>{
+        axios.get(url, {params: store.params}).then((response) =>{
           store.movieList = response.data.results;
           console.log(store.movieList);
         })
       },
       getSeriesList(){
         const url = store.apiUrl + store.endpoint.series;
-        axios.get(url, store.params).then((response) =>{
+        axios.get(url, {params: store.params}).then((response) =>{
           store.seriesList = response.data.results;
           console.log(store.seriesList);
         })
       }
     },
     created(){
-      this.getMovieList()
     }
   }
 </script>
