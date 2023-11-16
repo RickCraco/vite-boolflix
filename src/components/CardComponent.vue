@@ -17,7 +17,6 @@
                     <li v-else><span>Voto : {{ voto }}</span></li>
                 </ul>
             </div>
-
         </div>
     </div>
 </template>
