@@ -62,7 +62,7 @@ ul{
 }
 
 #flag {
-    width: 2em;
+    width: 1em;
 }
 
 #star {
