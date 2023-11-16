@@ -8,7 +8,8 @@
                 <ul class="list-unstyled text-start p-3">
                     <li><span class="fw-bold">Titolo:{{ title }}</span></li>
                     <li><span class="fw-bold">Titolo originale: {{ originalTitle }}</span></li>
-                    <li v-if="(lingua in store.languages)"><span class="fw-bold">Lingua: </span><img :src="checkFlag()" :alt="lingua" id="flag"></li>
+                    <li v-if="(lingua in store.languages)"><span class="fw-bold">Lingua: </span><img :src="checkFlag()"
+                            :alt="lingua" id="flag"></li>
                     <li v-else><span class="fw-bold">Lingua: {{ lingua.toLocaleUpperCase() }}</span></li>
                     <li><span class="fw-bold">{{ trama }}</span></li>
                     <li v-if="voto > 0">
@@ -36,7 +37,8 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            image: ''
         }
     },
     methods: {
@@ -50,13 +52,13 @@ export default {
             } else if (this.lingua === 'fr') {
                 return store.languages.fr;
             }
-        }
-    }
+        },
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-ul{
+ul {
     list-style: none;
 }
 
@@ -68,7 +70,7 @@ ul{
     width: 1em;
 }
 
-span{
+span {
     font-size: 10px;
 }
 

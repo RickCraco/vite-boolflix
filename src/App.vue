@@ -49,7 +49,7 @@ export default {
         store.seriesList = response.data.results;
         console.log(store.seriesList);
       })
-    }
+    },
   },
   created() {
     this.getMovieList()
