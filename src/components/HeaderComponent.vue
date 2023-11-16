@@ -1,12 +1,12 @@
 <template>
-    <header class="bg-black">
+    <header class="bg-black py-3">
         <div class="container d-flex align-items-center justify-content-between">
             <div>
                 <h1>BOOLFLIX</h1>
             </div>
-            <div>
-                <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString">
-                <button @click="searchFilms(), searchTV()">Cerca</button>
+            <div class="d-flex">
+                <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString" class="form-control mx-3" placeholder="Cerca i tuoi film o serie preferiti">
+                <button @click="searchFilms(), searchTV()" class="btn btn-danger">Cerca</button>
             </div>
         </div>
     </header>
@@ -53,5 +53,9 @@ export default {
 <style lang="scss" scoped>
 h1 {
     color: red;
+}
+
+input{
+    width: 400px !important;
 }
 </style>
