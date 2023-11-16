@@ -8,7 +8,7 @@
                 <ul class="list-unstyled text-start p-3">
                     <li><span class="fw-bold">Titolo:{{ title }}</span></li>
                     <li><span class="fw-bold">Titolo originale: {{ originalTitle }}</span></li>
-                    <li v-if="(lingua in store.languages)"><img :src="checkFlag()" :alt="lingua" id="flag"></li>
+                    <li v-if="(lingua in store.languages)"><span>Lingua: </span><img :src="checkFlag()" :alt="lingua" id="flag"></li>
                     <li v-else><span class="fw-bold">Lingua:{{ lingua }}</span></li>
                     <li><span class="fw-bold">{{ trama }}</span></li>
                     <li v-if="voto > 0">
