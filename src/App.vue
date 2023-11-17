@@ -18,6 +18,7 @@
             :lingua="serie.original_language" :voto="Math.round(serie.vote_average / 2)"
             :img="store.imgPath + serie.poster_path" :trama="serie.overview" />
         </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
   </div>
