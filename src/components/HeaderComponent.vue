@@ -26,7 +26,10 @@ export default {
     methods:{
         searchFilms(){
             if(this.searchString === ''){
-                store.params.query = 'a';
+                const url = store.trendingUrl;
+                axios.get(url + store.params.api_key).then((response) =>{
+                store.movieList = response.data.results;
+            })
             }else{
                 store.params.query = this.searchString;
             }

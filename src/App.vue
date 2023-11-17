@@ -37,8 +37,8 @@ export default {
   },
   methods: {
     getMovieList() {
-      const url = store.apiUrl + store.endpoint.movie;
-      axios.get(url, { params: store.params }).then((response) => {
+      const url = store.trendingUrl;
+      axios.get(url + store.params.api_key).then((response) => {
         store.movieList = response.data.results;
         console.log(store.movieList);
       })
