@@ -3,6 +3,7 @@ import { reactive } from "vue";
 export const store = reactive({
     apiUrl: 'https://api.themoviedb.org/3/',
     trendingUrl: 'https://api.themoviedb.org/3/trending/movie/week?api_key=',
+    trendingTvUrl: 'https://api.themoviedb.org/3/trending/tv/week?api_key=',
     endpoint: {
         movie: 'search/movie',
         series: 'search/tv'
