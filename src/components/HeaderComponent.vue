@@ -26,11 +26,13 @@ export default {
     methods:{
         searchFilms(){
             if(this.searchString === ''){
+                store.film_serie_flag = false;
                 const url = store.trendingUrl;
                 axios.get(url + store.params.api_key).then((response) =>{
                 store.movieList = response.data.results;
             })
             }else{
+                store.film_serie_flag = true;
                 store.params.query = this.searchString;
                 const url = store.apiUrl + store.endpoint.movie;
                 axios.get(url, {params: store.params}).then((response) =>{
@@ -45,6 +47,7 @@ export default {
                     store.seriesList = response.data.results;
                 })
             }else{
+                store.film_serie_flag = true;
                 store.params.query = this.searchString;
                 const url = store.apiUrl + store.endpoint.series;
                 axios.get(url, {params: store.params}).then((response) =>{
