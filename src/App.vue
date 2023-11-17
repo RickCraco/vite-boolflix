@@ -97,4 +97,8 @@ export default {
   .scroll-smooth{
     scroll-behavior: smooth;
   }
+
+  i{
+    cursor: pointer;
+  }
 </style>
