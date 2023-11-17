@@ -23,5 +23,6 @@ export const store = reactive({
     },
     myStar: 'https://affaso.com/wp-content/uploads/2020/06/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq.png',
     emptyStar: 'https://w7.pngwing.com/pngs/710/952/png-transparent-computer-icons-star-star-thumbnail.png',
-    film_serie_flag: false
+    film_serie_flag: false,
+    loadingFlag: false
 })

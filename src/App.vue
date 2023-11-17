@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <LoadingScreen v-if="!store.loadingFlag"/>
+  <div v-else>
     <HeaderComponent />
     <div class="bg-secondary">
       <div class="container py-3">
@@ -27,12 +28,14 @@ import axios from 'axios';
 import { store } from './store';
 import HeaderComponent from './components/HeaderComponent.vue';
 import CardComponent from './components/CardComponent.vue';
+import LoadingScreen from './components/LoadingScreen.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    LoadingScreen
   },
   data() {
     return {
