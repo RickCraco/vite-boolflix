@@ -11,9 +11,8 @@
                     <li v-if="(lingua in store.languages)"><span class="fw-bold">Lingua: </span><img :src="checkFlag()"
                             :alt="lingua" id="flag"></li>
                     <li v-else><span class="fw-bold">Lingua: {{ lingua.toLocaleUpperCase() }}</span></li>
-                    <li>
-                        <span v-for="name in cast">{{ name }}</span>
-                    </li>
+                    <li>Cast:</li>
+                    <li v-for="name in cast" class="cast-name">{{ name }}</li>
                     <li><span class="fw-bold">{{ trama }}</span></li>
                     <li v-if="voto > 0">
                         <img :src="store.myStar" :alt="voto" id="star" v-for="n in voto">
@@ -82,6 +81,10 @@ export default {
 <style lang="scss" scoped>
 ul {
     list-style: none;
+}
+
+.cast-name{
+    font-size: 10px;
 }
 
 #flag {
