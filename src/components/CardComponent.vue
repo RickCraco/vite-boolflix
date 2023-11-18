@@ -117,7 +117,7 @@ span {
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
-    height: 300px;
+    height: 350px;
     /* Remove this if you don't want the 3D effect */
 }
 

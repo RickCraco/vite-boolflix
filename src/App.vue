@@ -8,7 +8,7 @@
       </video>
     </div>
     <div class="bg-secondary vh-100">
-      <div class="container py-3">
+      <div class="p-3">
         <h2 v-if="!store.film_serie_flag" class="text-white">Film in tendenza</h2>
         <h2 v-else class="text-white">Films</h2>
         <div class="row g-2 flex-nowrap overflow-hidden scroll-smooth" ref="movies">
