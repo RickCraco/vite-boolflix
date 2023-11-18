@@ -28,5 +28,6 @@ export const store = reactive({
     loadingFlag: false,
     videoFlag: false,
     castUrl: 'https://api.themoviedb.org/3/movie/',
+    castUrlS: 'https://api.themoviedb.org/3/tv/',
     castList: [],
 })

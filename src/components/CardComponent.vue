@@ -1,5 +1,5 @@
 <template>
-    <div class="col-2 flip-card" @mouseenter="getCredits()">
+    <div class="col-2 flip-card" @mouseenter="getCredits(), getCreditsSeries()">
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <img :src="img" :alt="title" class="w-100 h-100">
@@ -72,6 +72,21 @@ export default {
                 }
                 //console.log(cast)
                 this.$emit('filmCast', cast);
+            })
+        },
+        getCreditsSeries(){
+            if(this.cast && this.cast.length > 0){
+                return
+            }
+            let cast = [];
+            const url = store.castUrlS + this.id + store.endpoint.credits + '?api_key=' + store.params.api_key;
+            axios.get(url).then((response) =>{
+                for(let i = 0; i < 5; i++){
+                    if(response.data.cast[i]){
+                        cast.push(response.data.cast[i].name);
+                    }
+                }
+                this.$emit('serieCast',cast);
             })
         }
     },

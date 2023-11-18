@@ -29,7 +29,7 @@
         <div class="row g-3 mt-3 flex-nowrap overflow-hidden scroll-smooth" ref="series">
           <CardComponent v-for="serie in store.seriesList" :title="serie.name" :originalTitle="serie.original_name"
             :lingua="serie.original_language" :voto="Math.round(serie.vote_average / 2)"
-            :img="store.imgPath + serie.poster_path" :trama="serie.overview" />
+            :img="store.imgPath + serie.poster_path" :trama="serie.overview" @serie-cast="addCastS($event, serie)" :cast="serie.cast" :id="serie.id"/>
         </div>
         <div class="d-flex justify-content-between align-items-center mt-2">
           <div>
@@ -94,6 +94,10 @@ export default {
       console.log(cast);
       console.log(movie);
       movie.cast = cast;
+    },
+    addCastS(cast,serie){
+      serie.cast = cast;
+      console.log(serie.cast)
     }
   },
   created() {
