@@ -6,7 +6,8 @@ export const store = reactive({
     trendingTvUrl: 'https://api.themoviedb.org/3/trending/tv/week?api_key=',
     endpoint: {
         movie: 'search/movie',
-        series: 'search/tv'
+        series: 'search/tv',
+        credits: '/credits'
     },
     params:{
         api_key: 'b97dde22e3b7e18da690eff507a5511b',
@@ -26,4 +27,6 @@ export const store = reactive({
     film_serie_flag: false,
     loadingFlag: false,
     videoFlag: false,
+    castUrl: 'https://api.themoviedb.org/3/movie/',
+    castList: [],
 })

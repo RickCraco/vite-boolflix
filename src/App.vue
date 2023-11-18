@@ -14,7 +14,7 @@
         <div class="row g-2 flex-nowrap overflow-hidden scroll-smooth" ref="movies">
           <CardComponent v-for="movie in store.movieList" :title="movie.title" :originalTitle="movie.original_title"
             :lingua="movie.original_language" :voto="Math.round(movie.vote_average / 2)"
-            :img="store.imgPath + movie.poster_path" :trama="movie.overview" />
+            :img="store.imgPath + movie.poster_path" :trama="movie.overview" :id="movie.id" @film-cast="addCast($event, movie)" :cast="movie.cast"/>
         </div>
         <div class="d-flex justify-content-between align-items-center mt-2">
           <div>
@@ -89,6 +89,11 @@ export default {
     },
     scrollSeriesleft() {
       this.$refs.series.scrollBy(-400, 0);
+    },
+    addCast(cast,movie){
+      console.log(cast);
+      console.log(movie);
+      movie.cast = cast;
     }
   },
   created() {

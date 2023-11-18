@@ -1,5 +1,5 @@
 <template>
-    <div class="col-2 flip-card">
+    <div class="col-2 flip-card" @mouseenter="getCredits()">
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <img :src="img" :alt="title" class="w-100 h-100">
@@ -11,6 +11,9 @@
                     <li v-if="(lingua in store.languages)"><span class="fw-bold">Lingua: </span><img :src="checkFlag()"
                             :alt="lingua" id="flag"></li>
                     <li v-else><span class="fw-bold">Lingua: {{ lingua.toLocaleUpperCase() }}</span></li>
+                    <li>
+                        <span v-for="name in cast">{{ name }}</span>
+                    </li>
                     <li><span class="fw-bold">{{ trama }}</span></li>
                     <li v-if="voto > 0">
                         <img :src="store.myStar" :alt="voto" id="star" v-for="n in voto">
@@ -24,6 +27,7 @@
 
 <script>
 import { store } from '../store';
+import axios from 'axios';
 
 export default {
     name: 'CardComponent',
@@ -33,7 +37,9 @@ export default {
         lingua: String,
         voto: Number,
         img: String,
-        trama: String
+        trama: String,
+        id: Number,
+        cast: Array
     },
     data() {
         return {
@@ -53,6 +59,22 @@ export default {
                 return store.languages.fr;
             }
         },
+        getCredits(){
+            if(this.cast && this.cast.length > 0){
+                return
+            }
+            let cast = [];
+            const url = store.castUrl + this.id + store.endpoint.credits + '?api_key=' + store.params.api_key;
+            axios.get(url).then((response) =>{
+                for(let i = 0; i < 5; i++){
+                    if(response.data.cast[i]){
+                        cast.push(response.data.cast[i].name);
+                    }
+                }
+                //console.log(cast)
+                this.$emit('filmCast', cast);
+            })
+        }
     },
 }
 </script>
