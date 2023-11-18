@@ -1,7 +1,12 @@
 <template>
   <LoadingScreen v-if="!store.loadingFlag" />
-  <div v-else>
-    <HeaderComponent />
+  <div v-else class="bg-secondary">
+    <HeaderComponent/>
+    <div>
+      <video autoplay muted loop class="w-100">
+        <source src="/bomba.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="bg-secondary vh-100">
       <div class="container py-3">
         <h2 v-if="!store.film_serie_flag" class="text-white">Film in tendenza</h2>
@@ -94,11 +99,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .scroll-smooth{
-    scroll-behavior: smooth;
-  }
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
 
-  i{
-    cursor: pointer;
-  }
+i {
+  cursor: pointer;
+}
 </style>
