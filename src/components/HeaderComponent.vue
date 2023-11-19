@@ -5,7 +5,7 @@
                 <h1>BOOLFLIX</h1>
             </div>
             <div class="d-flex">
-                <select name="" id="" class="form-control" @change="filterGeneri" v-model="movieId">
+                <select name="" id="" class="form-control w-25" @change="filterGeneri" v-model="movieId">
                     <option value="">ALL</option>
                     <option :value="genere.id" v-for="genere in store.listaGeneri">{{ genere.name }}</option>
                 </select>
