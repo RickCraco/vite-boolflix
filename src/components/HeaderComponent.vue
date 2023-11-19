@@ -5,7 +5,7 @@
                 <h1>BOOLFLIX</h1>
             </div>
             <div class="d-flex">
-                <select name="" id="" class="form-control w-25" @change="filterGeneri" v-model="movieId">
+                <select name="" id="" class="form-control w-25" @change="filterGeneri(), filterGeneriSeries()" v-model="movieId">
                     <option value="">ALL</option>
                     <option :value="genere.id" v-for="genere in store.listaGeneri">{{ genere.name }}</option>
                 </select>
@@ -67,6 +67,14 @@ export default {
             } else {
                 const filteredMovies = store.movieList.filter((el) => el.genre_ids.includes(this.movieId));
                 return store.filterF = filteredMovies;
+            }
+        },
+        filterGeneriSeries(){
+            if(this.movieId === ''){
+                return store.filterS = store.seriesList;
+            }else{
+                const filteredSeries = store.seriesList.filter((el) => el.genre_ids.includes(this.movieId));
+                return store.filterS = filteredSeries;
             }
         }
     }
