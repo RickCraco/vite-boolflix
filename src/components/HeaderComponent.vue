@@ -5,11 +5,12 @@
                 <h1>BOOLFLIX</h1>
             </div>
             <div class="d-flex">
-                <select name="" id="" class="form-control">
+                <select name="" id="" class="form-control" @change="filterGeneri" v-model="movieId">
                     <option value="">ALL</option>
                     <option :value="genere.id" v-for="genere in store.listaGeneri">{{ genere.name }}</option>
                 </select>
-                <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString" class="form-control mx-3" placeholder="Cerca i tuoi film o serie preferiti">
+                <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString" class="form-control mx-3"
+                    placeholder="Cerca i tuoi film o serie preferiti">
                 <button @click="searchFilms(), searchTV()" class="btn btn-danger">Cerca</button>
             </div>
         </div>
@@ -24,39 +25,48 @@ export default {
     data() {
         return {
             store,
-            searchString:''
+            searchString: '',
+            movieId: '',
         }
     },
-    methods:{
-        searchFilms(){
-            if(this.searchString === ''){
+    methods: {
+        searchFilms() {
+            if (this.searchString === '') {
                 store.film_serie_flag = false;
                 const url = store.trendingUrl;
-                axios.get(url + store.params.api_key).then((response) =>{
-                store.movieList = response.data.results;
-            })
-            }else{
+                axios.get(url + store.params.api_key).then((response) => {
+                    store.movieList = response.data.results;
+                })
+            } else {
                 store.film_serie_flag = true;
                 store.params.query = this.searchString;
                 const url = store.apiUrl + store.endpoint.movie;
-                axios.get(url, {params: store.params}).then((response) =>{
+                axios.get(url, { params: store.params }).then((response) => {
                     store.movieList = response.data.results;
                 })
             }
         },
-        searchTV(){
-            if(this.searchString === ''){
+        searchTV() {
+            if (this.searchString === '') {
                 const url = store.trendingTvUrl;
-                axios.get(url + store.params.api_key).then((response) =>{
+                axios.get(url + store.params.api_key).then((response) => {
                     store.seriesList = response.data.results;
                 })
-            }else{
+            } else {
                 store.film_serie_flag = true;
                 store.params.query = this.searchString;
                 const url = store.apiUrl + store.endpoint.series;
-                axios.get(url, {params: store.params}).then((response) =>{
+                axios.get(url, { params: store.params }).then((response) => {
                     store.seriesList = response.data.results;
                 })
+            }
+        },
+        filterGeneri() {
+            if (this.movieId === '') {
+                return store.filterF = store.movieList;
+            } else {
+                const filteredMovies = store.movieList.filter((el) => el.genre_ids.includes(this.movieId));
+                return store.filterF = filteredMovies;
             }
         }
     }
@@ -68,7 +78,7 @@ h1 {
     color: red;
 }
 
-input{
+input {
     width: 400px !important;
 }
 </style>

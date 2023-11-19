@@ -12,7 +12,7 @@
         <h2 v-if="!store.film_serie_flag" class="text-white">Film in tendenza</h2>
         <h2 v-else class="text-white">Films</h2>
         <div class="row g-2 flex-nowrap overflow-hidden scroll-smooth" ref="movies">
-          <CardComponent v-for="movie in store.movieList" :title="movie.title" :originalTitle="movie.original_title"
+          <CardComponent v-for="movie in store.filterF" :title="movie.title" :originalTitle="movie.original_title"
             :lingua="movie.original_language" :voto="Math.round(movie.vote_average / 2)"
             :img="store.imgPath + movie.poster_path" :trama="movie.overview" :id="movie.id" @film-cast="addCast($event, movie)" :cast="movie.cast"/>
         </div>
@@ -69,6 +69,7 @@ export default {
       axios.get(url + store.params.api_key).then((response) => {
         store.movieList = response.data.results;
         console.log(store.movieList);
+        store.filterF = store.movieList;
       })
     },
     getSeriesList() {
