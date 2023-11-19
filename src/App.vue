@@ -98,11 +98,19 @@ export default {
     addCastS(cast,serie){
       serie.cast = cast;
       console.log(serie.cast)
+    },
+    getGeneri(){
+      const url = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + store.params.api_key;
+      axios.get(url).then((response) => {
+        store.listaGeneri = response.data.genres;
+        console.log(store.listaGeneri)
+      })
     }
   },
   created() {
     this.getMovieList()
     this.getSeriesList()
+    this.getGeneri()
   }
 }
 </script>

@@ -30,4 +30,5 @@ export const store = reactive({
     castUrl: 'https://api.themoviedb.org/3/movie/',
     castUrlS: 'https://api.themoviedb.org/3/tv/',
     castList: [],
+    listaGeneri: [],
 })
