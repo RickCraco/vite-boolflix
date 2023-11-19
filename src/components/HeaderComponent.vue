@@ -5,6 +5,9 @@
                 <h1>BOOLFLIX</h1>
             </div>
             <div class="d-flex">
+                <select name="" id="" class="form-control">
+                    <option value="">ALL</option>
+                </select>
                 <input type="text" @keyup.enter="searchFilms(), searchTV()" v-model="searchString" class="form-control mx-3" placeholder="Cerca i tuoi film o serie preferiti">
                 <button @click="searchFilms(), searchTV()" class="btn btn-danger">Cerca</button>
             </div>
